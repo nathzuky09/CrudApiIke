@@ -7,7 +7,9 @@ class Funcionario(models.Model):
     documento = models.CharField(max_length=20)
     numeroTelefono = models.CharField(max_length=15)
     email = models.EmailField()
-
+    cargo = models.CharField(max_length=100, default='Sin especificar')
+    aprobacion_id = models.CharField(max_length=50, blank=True, null=True)
+    fecha_aprobacion = models.DateField(blank=True, null=True)
     def __str__(self):
         return f"{self.nombre} {self.apellido}"
 
